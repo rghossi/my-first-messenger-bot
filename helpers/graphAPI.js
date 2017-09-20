@@ -16,3 +16,12 @@ module.exports.sendMessage = (senderId, data) => {
     }
   })
 }
+
+module.exports.sendTypingOn = (senderId, data) => {
+  return api({
+    json: {
+      recipient: { id: senderId },
+      sender_action: 'typing_on'
+    }
+  })
+}
